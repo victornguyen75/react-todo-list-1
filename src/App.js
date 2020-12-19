@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,35 +47,41 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          Add an Item...
-          <br/>
-          <input
-            type="text"
-            placeholder="Type item here..."
-            value={this.state.newItem}
-            onChange={e => this.updateInput("newItem", e.target.value)}
-          />
-          <button
-            onClick={() => this.addItem()}
-          >
-            Add
-          </button>
-          <br/>
-          <ul>
-            {this.state.list.map(item => {
-              return (
-                <li key={item.id}>
-                  {item.value}
-                  <button
-                    onClick={() => this.deleteItem(item.id)}
-                  >
-                    X
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+        <h1 className="app-title">My To Do List</h1>
+        <div className="outline">
+          <div className="container">
+            <b>Add an Item...</b>
+            <br/>
+            <input
+              type="text"
+              placeholder="Type item here..."
+              value={this.state.newItem}
+              onChange={e => this.updateInput("newItem", e.target.value)}
+            />
+            <button
+              className="add-btn btn"
+              onClick={() => this.addItem()}
+              disabled={!this.state.newItem.length}
+            >
+              <i className="material-icons"> + </i>
+            </button>
+            <br/>
+            <ul>
+              {this.state.list.map(item => {
+                return (
+                  <li key={item.id}>
+                    {item.value}
+                    <button
+                      className="btn"
+                      onClick={() => this.deleteItem(item.id)}
+                    >
+                      <i className="material-icons">x</i>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );
