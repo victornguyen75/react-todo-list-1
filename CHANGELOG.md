@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2020-12-19
 ### Added
 - Basic project set up
-- Add/Delete methods to update the To Do List
 - Basic styling
+- Add/Delete methods to update the To Do List
 - Save/Load methods to local storage to retain progress
+- GitHub Pages hosting to demo the site
